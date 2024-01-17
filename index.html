@@ -115,15 +115,16 @@
         this.num = num;
       }
       count() {
-        let result = "";
-        for (let idx = this.num; idx > 0; idx--) {
-          if (idx === 0){
-            result = `Liftoff!`;
-          } else {
-            result = `${idx}!`;
-          }
+        if (this.num >= 1) {
+          const formerVal = this.num;
+          this.num--
+          return `${formerVal}!`;
+        } else if (this.num === 0) {
+          this.num--
+          return `Liftoff!`;
+        } else {
+          return null;
         }
-        return result;
       }
     }
 
